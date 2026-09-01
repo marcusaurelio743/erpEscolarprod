@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html" lang="pt-br">
+  <h:head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> Sistema ERP Escolar</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      rel="icon"
+      href="#{request.contextPath}/assets/img/kaiadmin/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    
+    <h:outputScript library="assets" name="js/plugin/webfont/webfont.min.js" />
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: [ "#{request.contextPath}/assets/css/fonts.min.css" />],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    
+    <!-- CSS do Kaiadmin via JSF -->
+    <!-- CSS com caminho absoluto usando contextPath -->
+    <link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="#{request.contextPath}/resources/assets/css/demo.css" />
+
+    
+  </h:head>
+  <h:body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              
+              <li class="nav-section">
+                <span class="sidebar-mini-icon">
+                  <i class="fa fa-ellipsis-h"></i>
+                </span>
+                <h4 class="text-section">Menu de Navegação</h4>
+              </li>
+              <li class="nav-item active submenu">
+                <a data-bs-toggle="collapse" href="#base">
+                  <i class="fas fa-layer-group"></i>
+                  <p>Base</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse show" id="base">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="../components/avatars.html">
+                        <span class="sub-item">Avatars</span>
+                      </a>
+                    </li>
+                    <li class="active">
+                      <a href="../components/buttons.html">
+                        <span class="sub-item">Buttons</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../components/gridsystem.html">
+                        <span class="sub-item">Grid System</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../components/panels.html">
+                        <span class="sub-item">Panels</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../components/notifications.html">
+                        <span class="sub-item">Notifications</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../components/sweetalert.html">
+                        <span class="sub-item">Sweet Alert</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../components/font-awesome-icons.html">
+                        <span class="sub-item">Font Awesome Icons</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../components/simple-line-icons.html">
+                        <span class="sub-item">Simple Line Icons</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../components/typography.html">
+                        <span class="sub-item">Typography</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            
+          </div>
+          <!-- Navbar Header -->
+          <nav
+            class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
+          >
+            <div class="container-fluid">
+              <nav
+                class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
+              >
+                
+              </nav>
+
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                <li
+                  class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none"
+                >
+                  
+                  
+                </li>
+                
+                
+                
+
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a
+                    class="dropdown-toggle profile-pic"
+                    data-bs-toggle="dropdown"
+                    href="#"
+                    aria-expanded="false"
+                  >
+                    <div class="avatar-sm">
+                      <img
+                        src="#{request.contextPath}/resources/assets/img/profile.jpg"
+                        alt="..."
+                        class="avatar-img rounded-circle"
+                      />
+                    </div>
+                    <span class="profile-username">
+                      <span class="op-7">Hi,</span>
+                      <span class="fw-bold">Usuario</span>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                      
+                      <li>
+                        
+                        <a class="dropdown-item" href="#">Logout</a>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div class="page-header">
+              <h3 class="fw-bold mb-3">Tela</h3>
+              
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Card-da-Tela</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1>Tela principal</h1>
+                  </div>
+                </div>
+              </div>
+             
+              
+             
+              
+            
+              
+              
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left">
+              
+            </nav>
+            <div class="copyright">
+              rodapé do Sistema <i class="fa fa-heart heart text-danger"></i> 
+              
+            </div>
+            
+          </div>
+        </footer>
+      </div>
+
+      
+      <!-- End Custom template -->
+    </div>
+    <!--   Core JS Files   -->
+    <h:outputScript library="assets" name="js/core/jquery-3.7.1.min.js" />
+    <h:outputScript library="assets" name="js/core/popper.min.js" />
+    <h:outputScript library="assets" name="js/core/bootstrap.min.js" />
+    
+
+    <!-- jQuery Scrollbar -->
+    <h:outputScript library="assets" name="js/plugin/jquery-scrollbar/jquery.scrollbar.min.js" />
+    
+    <!-- jQuery Sparkline -->
+    <h:outputScript library="assets" name="/js/plugin/jquery.sparkline/jquery.sparkline.min.js" />
+   
+
+    <!-- Datatables -->
+    <h:outputScript library="assets" name="/js/plugin/datatables/datatables.min.js" />
+    
+
+    <!-- Kaiadmin JS -->
+    <h:outputScript library="assets" name="/js/kaiadmin.min.js" />
+
+    
+  </h:body>
+</html>
