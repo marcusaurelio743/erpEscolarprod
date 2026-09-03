@@ -19,8 +19,64 @@
                     <h4 class="card-title">Cadastro de Alunos</h4>
                   </div>
                   <div class="card-body">
-                    <h3>Formúlario de Alunos</h3>
-                    <p:inputText placeholder="Infome o nome:"/>
+                    <h3>Formulário de Alunos</h3>
+                    <h:form id="formAluno">
+                    	<p:growl id="messages" showDetail="true" />
+                    	<div class="row">
+                    	<div class="col-md-6 mb-3">
+					            <p:outputLabel for="id" value="id" styleClass="form-label fw-bold" />
+					            <p:inputText id="id" value="#{alunoBean.aluno.id}" styleClass="form-control"  readonly="true" />
+					        </div>
+					        <div class="col-md-6 mb-3">
+					            <p:outputLabel for="nome" value="Nome Completo:" styleClass="form-label fw-bold" />
+					            <p:inputText id="nome" value="#{alunoBean.aluno.nome}" styleClass="form-control"  />
+					        </div>
+	        
+					        <div class="col-md-6 mb-3">
+					            <p:outputLabel for="dataNasc" value="Data de Nascimento:" styleClass="form-label fw-bold d-block" />
+					            <p:datePicker id="dataNasc" value="#{alunoBean.aluno.dataNascimento}"  pattern="dd/MM/yyyy" 
+                  					mask="true" styleClass="w-100" >
+					            <f:convertDateTime pattern="dd/MM/yyyy" type="date" />
+					            </p:datePicker>
+					        </div>
+					        <div class="col-md-6 mb-3">
+					            <p:outputLabel for="nomeMae" value="Nome da Mãe" styleClass="form-label fw-bold d-block" />
+					            <p:inputText id="nomeMae" value="#{alunoBean.aluno.nomeMae}"  styleClass="form-control" />
+					        </div>
+					         <div class="col-md-6 mb-3">
+					            <p:outputLabel for="nomePai" value="Nome do Pai" styleClass="form-label fw-bold d-block" />
+					            <p:inputText id="nomePai" value="#{alunoBean.aluno.nomePai}"  styleClass="form-control" />
+					        </div>
+					        
+					        <div class="col-md-6 mb-3">
+					            <p:outputLabel for="endereco" value="Endereço:" styleClass="form-label fw-bold d-block" />
+					            <p:inputText id="endereco" value="#{alunoBean.aluno.endereco}"  styleClass="form-control" />
+					        </div>
+					        <div class="col-md-6 mb-3">
+					            <p:outputLabel for="naturalidade" value="Naturalidade:" styleClass="form-label fw-bold d-block" />
+					            <p:inputText id="naturalidade" value="#{alunoBean.aluno.naturalidade}"  styleClass="form-control" />
+					        </div>
+					        <div class="col-md-6 mb-3">
+					        
+					            <p:outputLabel for="sexo" value="Sexo:" styleClass="form-label fw-bold d-block" />
+					            <h:selectOneMenu id="sexo"
+					             	required="true"
+					             	 requiredMessage="Selecione o sexo do aluno"
+					             	 value="#{alunoBean.aluno.sexo}"
+					             	  class="form-select"
+					             >
+								<f:selectItem itemLabel="----Selecione---" noSelectionOption="true" itemValue="#{null}"/>
+								<f:selectItems
+									value="#{alunoBean.sexo}"
+									var="s"
+									itemValue="#{s}"
+									itemLabel="#{s.descricao}"
+								/>
+							</h:selectOneMenu>
+					        </div>
+					        <h:commandButton value=" Salvar" action="#{alunoBean.salvar}" class="btn btn-success"/>
+    					</div>
+                    </h:form>
                   </div>
                 </div>
               </div>
