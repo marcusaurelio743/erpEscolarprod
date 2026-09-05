@@ -34,9 +34,13 @@
 	        
 					        <div class="col-md-6 mb-3">
 					            <p:outputLabel for="dataNasc" value="Data de Nascimento:" styleClass="form-label fw-bold d-block" />
-					            <p:datePicker id="dataNasc" value="#{alunoBean.aluno.dataNascimento}"  pattern="dd/MM/yyyy" 
-                  					mask="true" styleClass="w-100" >
-					            <f:convertDateTime pattern="dd/MM/yyyy" type="date" />
+					            <p:datePicker id="dataNasc" value="#{alunoBean.aluno.dataNascimento}"  
+					            	pattern="dd/MM/yyyy" 
+                 					 mask="true" 
+                 					 showIcon="true"
+                 					 
+					             styleClass="w-100" >
+					            
 					            </p:datePicker>
 					        </div>
 					        <div class="col-md-6 mb-3">
